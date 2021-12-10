@@ -1,0 +1,27 @@
+.progress-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 12em;
+    height: 5em;
+    margin: 0 auto;
+}
+.progress-dots{
+    width: 0.5em;
+    height: 0.5em;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 0.075em solid white;
+}
+.filled {
+    background-color: white;
+    border: 0.075em solid white;
+}
+.current{
+    background-color: transparent;
+    border: 0.125em solid white;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+}

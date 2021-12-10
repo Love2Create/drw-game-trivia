@@ -1,0 +1,26 @@
+.question-container{
+    display: flex;
+    flex-direction: column;
+    height: 37em;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.selection-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    gap: 3em;
+}
+.selection{
+    display: flex;
+    width: 14em;
+    height: 18em;
+    background-color: $textColor;
+    color: $primaryColor;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    margin-bottom: 2em;
+}
