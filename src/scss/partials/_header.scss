@@ -1,7 +1,14 @@
 .appHeader{
     display: flex;
     height: 1.5em;
+    padding: 0.5em;
+    justify-content: end;
     h1{
         font-size: $small;
     }
+}
+
+.appHeader img{
+    width: 4em;
+    height: 1.25em;
 }

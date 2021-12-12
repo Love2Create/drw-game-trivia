@@ -1,26 +1,51 @@
 .question-container{
     display: flex;
     flex-direction: column;
-    height: 37em;
-    width: 100%;
+    width: 100vw;
     align-items: center;
     justify-content: center;
 }
 .selection-container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 100%;
-    gap: 3em;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    @include desktop{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 3em;
+    }
 }
 .selection{
     display: flex;
-    width: 14em;
-    height: 18em;
     background-color: $textColor;
     color: $primaryColor;
     justify-content: center;
     align-items: center;
+    @include desktop{
+        width: 8em;
+        height: 14em;
+    }
 }
 h2{
-    margin-bottom: 2em;
+    @include desktop{
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
 }
+[type=radio]{
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+[type=radio] + img {
+    cursor: pointer;
+    width: 9em;
+    height: 12em;
+    @include desktop{
+        width: 16em;
+        height: 22em;
+    }
+}
+[type=radio]:checked + img {
+    outline: 5px solid blue;
+  }

@@ -6,16 +6,31 @@
       <IntroScreen v-if="progress === -1" @started="surveyStarted" />
 
       <div v-if="progress >= 0">
-        <Question :question="questions[progress]" />
+        <template v-for="(question, index) in questions">
+          <Question
+            v-if="progress === index"
+            :key="question"
+            :question="question"
+          />
+        </template>
       </div>
 
-      <div v-if="progress >= 0" @click="addToProgress">
-        <button>Next</button>
+      <div class="buttons-container">
+        <div v-if="progress >= 0" @click="minusFromProgress">
+          <button :disabled="progress < 1">Back</button>
+        </div>
+        <div v-if="progress >= 0" @click="addToProgress">
+          <button :disabled="questions[progress].userChoice < 0">{{ submitListener }}</button>
+        </div>
       </div>
 
       <div class="progress-bar" v-if="progress >= 0">
         <Progress :progress="progress" :questions="questions" />
       </div>
+
+      <!-- <div>
+      <Result />
+      </div> -->
     </main>
 
     <Footer />
@@ -30,52 +45,120 @@ import Footer from "./components/Footer.vue";
 import IntroScreen from "./components/IntroScreen.vue";
 import Progress from "./components/Progress.vue";
 import Question from "./components/Question.vue";
+// import Result from "./components/Result.vue";
 
 export default {
   name: "App",
 
+  mounted() {
+    console.log(this.questions);
+  },
+
   data() {
     return {
       progress: -1,
-      questions: [           
-            {
-            title: 'Question 1',
-            selections: ['choice 1', 'choice 2', 'choice 3', 'choice 4'],
-            },
-            {
-            title: 'Question 2',
-            selections: ['choice 1', 'choice 2', 'choice 3', 'choice 4'],
-            },
-            {
-            title: 'Question 3',
-            selections: ['choice 1', 'choice 2', 'choice 3', 'choice 4'],
-            },
-            {
-            title: 'Question 4',
-            selections: ['choice 1', 'choice 2', 'choice 3', 'choice 4'],
-            },
-            {
-            title: 'Question 5',
-            selections: ['choice 1', 'choice 2', 'choice 3', 'choice 4'],
-            },
-            {
-            title: 'Question 6',
-            selections: ['choice 1', 'choice 2', 'choice 3', 'choice 4'],
-            },
-            {
-            title: 'Question 7',
-            selections: ['choice 1', 'choice 2', 'choice 3', 'choice 4'],
-            },
-            {
-            title: 'Question 8',
-            selections: ['choice 1', 'choice 2', 'choice 3', 'choice 4'],
-            },
-            {
-            title: 'Question 9',
-            selections: ['choice 1', 'choice 2', 'choice 3', 'choice 4'],
-            },
-            ],
-      chosen: [...Array(9).keys()],
+      // quetsions: require("./assets/questions.json"),
+      questions: [
+        {
+          title: "Question 1",
+          selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
+          userChoice: -1,
+          images: [
+            require("./assets/question_selection_1.jpg"),
+            require("./assets/question_selection_2.jpg"),
+            require("./assets/question_selection_3.jpg"),
+            require("./assets/question_selection_4.jpg"),
+          ],
+        },
+        {
+          title: "Question 2",
+          selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
+          userChoice: -1,
+          images: [
+            require("./assets/question_selection_1.jpg"),
+            require("./assets/question_selection_2.jpg"),
+            require("./assets/question_selection_3.jpg"),
+            require("./assets/question_selection_4.jpg"),
+          ],
+        },
+        {
+          title: "Question 3",
+          selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
+          userChoice: -1,
+          images: [
+            require("./assets/question_selection_1.jpg"),
+            require("./assets/question_selection_2.jpg"),
+            require("./assets/question_selection_3.jpg"),
+            require("./assets/question_selection_4.jpg"),
+          ],
+        },
+        {
+          title: "Question 4",
+          selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
+          userChoice: -1,
+          images: [
+            require("./assets/question_selection_1.jpg"),
+            require("./assets/question_selection_2.jpg"),
+            require("./assets/question_selection_3.jpg"),
+            require("./assets/question_selection_4.jpg"),
+          ],
+        },
+        {
+          title: "Question 5",
+          selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
+          userChoice: -1,
+          images: [
+            require("./assets/question_selection_1.jpg"),
+            require("./assets/question_selection_2.jpg"),
+            require("./assets/question_selection_3.jpg"),
+            require("./assets/question_selection_4.jpg"),
+          ],
+        },
+        {
+          title: "Question 6",
+          selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
+          userChoice: -1,
+          images: [
+            require("./assets/question_selection_1.jpg"),
+            require("./assets/question_selection_2.jpg"),
+            require("./assets/question_selection_3.jpg"),
+            require("./assets/question_selection_4.jpg"),
+          ],
+        },
+        {
+          title: "Question 7",
+          selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
+          userChoice: -1,
+          images: [
+            require("./assets/question_selection_1.jpg"),
+            require("./assets/question_selection_2.jpg"),
+            require("./assets/question_selection_3.jpg"),
+            require("./assets/question_selection_4.jpg"),
+          ],
+        },
+        {
+          title: "Question 8",
+          selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
+          userChoice: -1,
+          images: [
+            require("./assets/question_selection_1.jpg"),
+            require("./assets/question_selection_2.jpg"),
+            require("./assets/question_selection_3.jpg"),
+            require("./assets/question_selection_4.jpg"),
+          ],
+        },
+        {
+          title: "Question 9",
+          selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
+          userChoice: -1,
+          images: [
+            require("./assets/question_selection_1.jpg"),
+            require("./assets/question_selection_2.jpg"),
+            require("./assets/question_selection_3.jpg"),
+            require("./assets/question_selection_4.jpg"),
+          ],
+        },
+      ],
     };
   },
 
@@ -85,6 +168,7 @@ export default {
     IntroScreen,
     Progress,
     Question,
+    // Result,
   },
 
   methods: {
@@ -94,11 +178,22 @@ export default {
     },
 
     addToProgress() {
-      if (this.progress < this.questions.length) {
+      if (this.progress < this.questions.length - 1) {
         this.progress++;
       }
     },
+    minusFromProgress() {
+      if (this.progress > 0) {
+        this.progress--;
+      }
+    },
   },
+
+  computed: {
+    submitListener(){
+      return this.progress === this.questions.length-1 ? "Submit" : "Next";
+    }
+  }
 };
 </script>
 

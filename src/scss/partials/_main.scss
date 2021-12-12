@@ -3,9 +3,22 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 2em;
-    // height: 43em;
+    @include desktop{
+        margin-top: 2em;
+    }
+    width: 100vw;
 }
+
+.buttons-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+    @include desktop{
+        margin-top: 3em;
+    }
+}
+
 button{
-    display: block;
+    display: flex;
+    margin: 1em;
 }
