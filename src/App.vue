@@ -2,6 +2,10 @@
   <div id="app">
     <Header />
 
+      <div>
+        <TestForm @submit-clicked="afterSubmit"></TestForm>
+      </div>
+
     <main>
       <IntroScreen v-if="progress === -1" @started="surveyStarted" />
 
@@ -46,12 +50,13 @@ import IntroScreen from "./components/IntroScreen.vue";
 import Progress from "./components/Progress.vue";
 import Question from "./components/Question.vue";
 // import Result from "./components/Result.vue";
+import TestForm from "./components/TestForm.vue";
 
 export default {
   name: "App",
 
   mounted() {
-    console.log(this.questions);
+    // console.log(this.questions);
   },
 
   data() {
@@ -168,6 +173,7 @@ export default {
     IntroScreen,
     Progress,
     Question,
+    TestForm,
     // Result,
   },
 
@@ -187,6 +193,14 @@ export default {
         this.progress--;
       }
     },
+    afterSubmit(e){
+      const fullName = e.firstName + " " + e.middleName + " " + e.lastName;
+      const fullAddress = e.address1 + " " + e.address2 + " " + e.city + " , " + e.state;
+      console.log(e.lastName);
+      console.log(fullName);
+      console.log(e.birthday);
+      console.log(fullAddress);
+    }
   },
 
   computed: {

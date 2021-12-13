@@ -1,6 +1,6 @@
 <template>
   <div class="question-container">
-    <h2 v-html="question.title"></h2>
+    <h2 class="question-header" v-html="question.title"></h2>
     <div class="selection-container">
       <label
         v-for="(selection, index) in question.selections"
