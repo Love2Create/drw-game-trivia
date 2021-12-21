@@ -1,35 +1,52 @@
 <template>
   <div id="app">
     <Header />
-
+    <!-- 
       <div>
         <TestForm @submit-clicked="afterSubmit"></TestForm>
-      </div>
+      </div> -->
 
     <main>
       <IntroScreen v-if="progress === -1" @started="surveyStarted" />
 
-      <div v-if="progress >= 0">
+      <div v-if="progress >= 0 && !concluded">
         <template v-for="(question, index) in questions">
           <Question
             v-if="progress === index"
-            :key="question"
+            :feedback="feedback"
+            :key="`question-${index}`"
             :question="question"
-          />
+          >
+            <div slot="correct">
+              <p>You got it!</p>
+            </div>
+
+            <div slot="incorrect">
+              <p>Want to try again?</p>
+            </div>
+          </Question>
         </template>
       </div>
 
-      <div class="buttons-container">
-        <div v-if="progress >= 0" @click="minusFromProgress">
+      <div v-if="!concluded" class="buttons-container">
+        <div v-if="progress >= 0" v-show="!trivia" @click="minusFromProgress">
           <button :disabled="progress < 1">Back</button>
         </div>
         <div v-if="progress >= 0" @click="addToProgress">
-          <button :disabled="questions[progress].userChoice < 0">{{ submitListener }}</button>
+          <button :disabled="questions[progress].userChoice < 0">
+            {{ submitListener }}
+          </button>
         </div>
       </div>
 
-      <div class="progress-bar" v-if="progress >= 0">
+      <div v-if="progress >= 0 && !concluded" class="progress-bar">
         <Progress :progress="progress" :questions="questions" />
+      </div>
+
+      <div v-if="concluded" >
+        <Conclusion :questions="questions" :trivia="trivia" :poll="poll" :personality-test="personalityTest">
+          <ExternalContent url="https://www.youtube.com/embed/Kpb_op5WtLU" width="800" height="400" />
+        </Conclusion>
       </div>
 
       <!-- <div>
@@ -49,121 +66,36 @@ import Footer from "./components/Footer.vue";
 import IntroScreen from "./components/IntroScreen.vue";
 import Progress from "./components/Progress.vue";
 import Question from "./components/Question.vue";
+import content from "./resources/content.js";
+import Conclusion from "./components/Conclusion.vue";
+import ExternalContent from "./components/ExternalContent.vue";
+import {updateMetaContent} from "./utils/utilities.js";
+// import axios from "axios";
 // import Result from "./components/Result.vue";
-import TestForm from "./components/TestForm.vue";
+
+// const appData = require ("../public/questions.json");
+// appData.questions.forEach(item =>{
+//   item.images = item.images.map(_item =>{
+//     return require(_item);
+//   })
+// })
 
 export default {
   name: "App",
 
   mounted() {
-    // console.log(this.questions);
+    updateMetaContent();
+    // console.log(this.$data);
+    // console.log(appData);
+    // axios.get("../public/questions.json").then((response)=>{
+    //   console.log(response.data);
+    // });
   },
 
   data() {
     return {
-      progress: -1,
-      // quetsions: require("./assets/questions.json"),
-      questions: [
-        {
-          title: "Question 1",
-          selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
-          userChoice: -1,
-          images: [
-            require("./assets/question_selection_1.jpg"),
-            require("./assets/question_selection_2.jpg"),
-            require("./assets/question_selection_3.jpg"),
-            require("./assets/question_selection_4.jpg"),
-          ],
-        },
-        {
-          title: "Question 2",
-          selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
-          userChoice: -1,
-          images: [
-            require("./assets/question_selection_1.jpg"),
-            require("./assets/question_selection_2.jpg"),
-            require("./assets/question_selection_3.jpg"),
-            require("./assets/question_selection_4.jpg"),
-          ],
-        },
-        {
-          title: "Question 3",
-          selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
-          userChoice: -1,
-          images: [
-            require("./assets/question_selection_1.jpg"),
-            require("./assets/question_selection_2.jpg"),
-            require("./assets/question_selection_3.jpg"),
-            require("./assets/question_selection_4.jpg"),
-          ],
-        },
-        {
-          title: "Question 4",
-          selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
-          userChoice: -1,
-          images: [
-            require("./assets/question_selection_1.jpg"),
-            require("./assets/question_selection_2.jpg"),
-            require("./assets/question_selection_3.jpg"),
-            require("./assets/question_selection_4.jpg"),
-          ],
-        },
-        {
-          title: "Question 5",
-          selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
-          userChoice: -1,
-          images: [
-            require("./assets/question_selection_1.jpg"),
-            require("./assets/question_selection_2.jpg"),
-            require("./assets/question_selection_3.jpg"),
-            require("./assets/question_selection_4.jpg"),
-          ],
-        },
-        {
-          title: "Question 6",
-          selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
-          userChoice: -1,
-          images: [
-            require("./assets/question_selection_1.jpg"),
-            require("./assets/question_selection_2.jpg"),
-            require("./assets/question_selection_3.jpg"),
-            require("./assets/question_selection_4.jpg"),
-          ],
-        },
-        {
-          title: "Question 7",
-          selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
-          userChoice: -1,
-          images: [
-            require("./assets/question_selection_1.jpg"),
-            require("./assets/question_selection_2.jpg"),
-            require("./assets/question_selection_3.jpg"),
-            require("./assets/question_selection_4.jpg"),
-          ],
-        },
-        {
-          title: "Question 8",
-          selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
-          userChoice: -1,
-          images: [
-            require("./assets/question_selection_1.jpg"),
-            require("./assets/question_selection_2.jpg"),
-            require("./assets/question_selection_3.jpg"),
-            require("./assets/question_selection_4.jpg"),
-          ],
-        },
-        {
-          title: "Question 9",
-          selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
-          userChoice: -1,
-          images: [
-            require("./assets/question_selection_1.jpg"),
-            require("./assets/question_selection_2.jpg"),
-            require("./assets/question_selection_3.jpg"),
-            require("./assets/question_selection_4.jpg"),
-          ],
-        },
-      ],
+      ...content,
+      concluded: false,
     };
   },
 
@@ -173,7 +105,8 @@ export default {
     IntroScreen,
     Progress,
     Question,
-    TestForm,
+    Conclusion,
+    ExternalContent,
     // Result,
   },
 
@@ -186,6 +119,8 @@ export default {
     addToProgress() {
       if (this.progress < this.questions.length - 1) {
         this.progress++;
+      }else{
+        this.concluded = true;
       }
     },
     minusFromProgress() {
@@ -193,21 +128,22 @@ export default {
         this.progress--;
       }
     },
-    afterSubmit(e){
+    afterSubmit(e) {
       const fullName = e.firstName + " " + e.middleName + " " + e.lastName;
-      const fullAddress = e.address1 + " " + e.address2 + " " + e.city + " , " + e.state;
+      const fullAddress =
+        e.address1 + " " + e.address2 + " " + e.city + " , " + e.state;
       console.log(e.lastName);
       console.log(fullName);
       console.log(e.birthday);
       console.log(fullAddress);
-    }
+    },
   },
 
   computed: {
-    submitListener(){
-      return this.progress === this.questions.length-1 ? "Submit" : "Next";
-    }
-  }
+    submitListener() {
+      return this.progress === this.questions.length - 1 ? "Submit" : "Next";
+    },
+  },
 };
 </script>
 

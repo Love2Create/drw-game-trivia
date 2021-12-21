@@ -1,0 +1,133 @@
+const content={
+    progress: -1,
+    trivia: true,
+    poll: false,
+    personalityTest: false,
+    survey: false,
+    feedback: false,
+
+    // quetsions: require("../assets/questions.json"),
+    questions: [
+      {
+        title: "Question 1",
+        selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
+        userChoice: -1,
+        correctAnswer: 1,
+        images: [
+          require("../assets/question_selection_1.jpg"),
+          require("../assets/question_selection_2.jpg"),
+          require("../assets/question_selection_3.jpg"),
+          require("../assets/question_selection_4.jpg"),
+        ],
+      },
+      {
+        title: "Question 2",
+        selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
+        userChoice: -1,
+        correctAnswer: 0,
+        images: [
+          require("../assets/question_selection_1.jpg"),
+          require("../assets/question_selection_2.jpg"),
+          require("../assets/question_selection_3.jpg"),
+          require("../assets/question_selection_4.jpg"),
+        ],
+      },
+      {
+        title: "Question 3",
+        selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
+        userChoice: -1,
+        correctAnswer: 3,
+        images: [
+          require("../assets/question_selection_1.jpg"),
+          require("../assets/question_selection_2.jpg"),
+          require("../assets/question_selection_3.jpg"),
+          require("../assets/question_selection_4.jpg"),
+        ],
+      },
+      {
+        title: "Question 4",
+        selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
+        userChoice: -1,
+        correctAnswer: 1,
+        images: [
+          require("../assets/question_selection_1.jpg"),
+          require("../assets/question_selection_2.jpg"),
+          require("../assets/question_selection_3.jpg"),
+          require("../assets/question_selection_4.jpg"),
+        ],
+      },
+      {
+        title: "Question 5",
+        selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
+        userChoice: -1,
+        correctAnswer: 0,
+        images: [
+          require("../assets/question_selection_1.jpg"),
+          require("../assets/question_selection_2.jpg"),
+          require("../assets/question_selection_3.jpg"),
+          require("../assets/question_selection_4.jpg"),
+        ],
+      },
+      {
+        title: "Question 6",
+        selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
+        userChoice: -1,
+        correctAnswer: 2,
+        images: [
+          require("../assets/question_selection_1.jpg"),
+          require("../assets/question_selection_2.jpg"),
+          require("../assets/question_selection_3.jpg"),
+          require("../assets/question_selection_4.jpg"),
+        ],
+      },
+      {
+        title: "Question 7",
+        selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
+        userChoice: -1,
+        correctAnswer: 3,
+        images: [
+          require("../assets/question_selection_1.jpg"),
+          require("../assets/question_selection_2.jpg"),
+          require("../assets/question_selection_3.jpg"),
+          require("../assets/question_selection_4.jpg"),
+        ],
+      },
+      {
+        title: "Question 8",
+        selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
+        userChoice: -1,
+        correctAnswer: 1,
+        images: [
+          require("../assets/question_selection_1.jpg"),
+          require("../assets/question_selection_2.jpg"),
+          require("../assets/question_selection_3.jpg"),
+          require("../assets/question_selection_4.jpg"),
+        ],
+      },
+      {
+        title: "Question 9",
+        selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
+        userChoice: -1,
+        correctAnswer: 0,
+        images: [
+          require("../assets/question_selection_1.jpg"),
+          require("../assets/question_selection_2.jpg"),
+          require("../assets/question_selection_3.jpg"),
+          require("../assets/question_selection_4.jpg"),
+        ],
+      },
+      {
+        title: "Question 10",
+        selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
+        userChoice: -1,
+        correctAnswer: 2,
+        images: [
+          require("../assets/question_selection_1.jpg"),
+          require("../assets/question_selection_2.jpg"),
+          require("../assets/question_selection_3.jpg"),
+          require("../assets/question_selection_4.jpg"),
+        ],
+      },
+    ],
+}
+export default content;
