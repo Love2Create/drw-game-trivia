@@ -14,7 +14,6 @@ const content={
         selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
         userChoice: -1,
         correctAnswer: 1,
-        hero: require("../../public/Images/q1_image1.png"),
         // choices:[
         //   "2012","2013","2014","2015",
         // ],
@@ -27,15 +26,15 @@ const content={
       },
       {
         id: "1",
-        title: "Question 2",
+        title: "<span>When did larkin play in his</span> <span>first NHL game?</span>",
         selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
         userChoice: -1,
         correctAnswer: 0,
         images: [
-          require("../assets/question_selection_1.jpg"),
-          require("../assets/question_selection_2.jpg"),
-          require("../assets/question_selection_3.jpg"),
-          require("../assets/question_selection_4.jpg"),
+          require("../assets/q2_a1.gif"),
+          require("../assets/q2_a2.gif"),
+          require("../assets/q2_a3.gif"),
+          require("../assets/q2_a4.gif"),
         ],
       },
       {

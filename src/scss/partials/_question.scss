@@ -5,9 +5,6 @@
     align-items: center;
     justify-content: center;
     letter-spacing: 0.1em;
-    @include desktop{
-        width: 90vw;
-    }
     &.question{
         &-0{
             &::after{
@@ -21,26 +18,98 @@
                 top: 2em;
                 right: 50%;
                 margin-right: -6em;
+                pointer-events: none;
                 @include tablet{
-                    width: 24em;
-                    height: 35em;
+                    width: 15em;
+                    height: 20em;
                     margin-right: 11em;
-                    top: 4em;
+                    top: 6em;
+                    margin-right: 7.8em;
                     border: 1px solide white;
                 }
+                @include desktop{
+                    width: 21em;
+                    height: 28em;
+                    margin-right: 11em;
+                    top: 7em;
+                    margin-right: 9.25em;
+                }
             }
-            @include tablet{
-                &::before{
+            
+            &::before{
+                @include tablet{
                     content: "";
                     z-index: -100;
                     width: 25em;
-                    height: 39em;
+                    height: 30em;
                     background-image: url('../public/Images/q1_image2.png');
                     background-size: cover;
                     position: absolute;
                     top: 0em;
                     left: 50%;
-                    margin-left: 7em;
+                    margin-left: 5em;
+                }
+                @include desktop{
+                    width: 37em;
+                    height: 42em;
+                    top: -3em;
+                    margin-left: 8em;
+                }
+            }
+            
+        }
+        &-1{
+            span{
+                @include tablet{
+                    display: block;
+                }
+                @include desktop{
+                    display: block;
+                }
+            }
+            &::after{
+                content: "";
+                width: 18em;
+                height: 12.5em;
+                background-image: url('../public/Images/q2_image1.png');
+                background-size: cover;
+                z-index: 30;
+                position: absolute;
+                top: 2em;
+                right: 50%;
+                margin-right: -13em;
+                pointer-events: none;
+                @include tablet{
+                    width: 17em;
+                    height: 23em;
+                    margin-right: 5em;
+                    top: 4em;
+                }
+                @include desktop{
+                    width: 24em;
+                    height: 30em;
+                    margin-right: 3em;
+                    top: 5em;
+                }
+            }
+            &::before{
+                @include tablet{
+                    content: "";
+                    z-index: -100;
+                    width: 20em;
+                    height: 35em;
+                    background-image: url('../public/Images/q2_image2.gif');
+                    background-size: cover;
+                    position: absolute;
+                    top: -4em;
+                    left: 50%;
+                    margin-left: 8em;
+                }
+                @include desktop{
+                    width: 25em;
+                    height: 45em;
+                    top: -3em;
+                    margin-left: 11em;
                 }
             }
         }
@@ -54,7 +123,6 @@
             &::after{
                 content:"";
                 margin-top: 0.125em;
-
                 width: 4.25em;
                 height: 0.35em;
                 background-image: url('../public/Images/lines_01.png');
@@ -66,6 +134,9 @@
             width: 70vw;
             // margin-left: 2em;
         }
+        @include desktop{
+            margin-top: 0em;
+        }
     }
     .question-header-text{
         font-size: 2em;
@@ -73,8 +144,13 @@
         line-height: 1.125em;
         border-top: 1px solid white;
         padding-top: 0.5em;
+        text-transform: uppercase;
         @include tablet{
             border-top: 0px solid white;
+            font-size: 1.75em;
+        }
+        @include desktop{
+            font-size: 2.5em;
         }
     }
 }
@@ -84,6 +160,9 @@
     gap: 1.5em;
     @include tablet{
         grid-template-columns: 1fr 1fr;
+        gap: 1.25em;
+    }
+    @include desktop{
         gap: 2em;
     }
 }
@@ -105,12 +184,15 @@
     width: 9em;
     height: auto;
     box-sizing: border-box;
+    border-radius: 0.2em;
     transform: scale(0.9);
     transition: transform, border-radius;
     transition-duration: 0.5s, 0.5s;
     @include tablet{
-        width: 12em;
-        height: auto;
+        width: 8.5em;
+    }
+    @include desktop{
+        width: 9.5em;
     }
     
 }
