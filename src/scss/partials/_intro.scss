@@ -2,8 +2,146 @@
     // border: 1px solid white;
     display: flex;
     flex-direction: column;
-    height: 43em;
+    height: 32em;
     width: 100%;
     align-items: center;
     justify-content: center;
+    .intro-title{
+        display: flex;
+        flex-direction: column;
+        // border: 1px solid orange;
+        position: relative;
+        .intro-subhead{
+            text-align: center;
+            font-size: 1.5em;
+            text-transform: uppercase;
+            font-weight: $light;
+            margin: 0px;
+            line-height: 1;
+            // border: 1px solid yellow;
+            margin: 0;
+            @include tablet{
+                font-size: 2em;
+            }
+        }
+        .intro-header{
+            font-size: 3.75em;
+            font-weight: $regular;
+            letter-spacing: -1px;
+            // border: 1px solid yellow;
+            line-height: 1;
+            margin: 0;
+            text-align: center;
+            @include tablet{
+                font-size: 6em;
+            }
+        }
+    }
+    .intro-button{
+        margin-top: 1.5em;
+    }
+    .intro-arrow{
+        width: 3em;
+        height: auto;
+        position: absolute;
+        top: 6.25em;
+        left: 50%;
+        transform: scaleY(-1) rotate(-105deg);
+        margin-left: 9em;
+        @include tablet{
+            transform: scaleY(1) rotate(-5deg);
+            width: 7em;
+            height: auto;
+            top: 8em;
+            margin-left: 10em;
+        }
+    }
+    @keyframes rotation-wabble {
+        0%{
+            transform:rotate(0deg);
+        }
+        40%{
+            transform:rotate(0deg);
+        }
+        50%{
+            transform:rotate(-20deg);
+        }
+        60%{
+            transform:rotate(20deg);
+        }
+        70%{
+            transform:rotate(-10deg);
+        }
+        80%{
+            transform:rotate(10deg);
+        }
+        90%{
+            transform:rotate(0deg);
+        }
+        100%{
+            transform:rotate(0deg);
+        }
+    }
+    .intro-avatar{
+        position: absolute;
+        top: 6em;
+        left: 50%;
+        width: 4em;
+        height: auto;
+        margin-left: 5.75em;
+        animation: rotation-wabble;
+        animation-duration:2s;
+        animation-iteration-count:infinite;
+        animation-timing-function: ease-in-out;
+        @include tablet{
+            width: 5em;
+            height: auto;
+            top: 2.5em;
+            margin-left: 17em;
+        }
+    }
+    .button-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .triangles-container{
+        display: flex;
+        flex-direction: row;
+        color: white;
+
+        @keyframes triangle-animation{
+            0%{
+                transform: scale(0.9);
+                opacity: 1;
+            }
+            40%{
+                transform: scale(1.3);
+                opacity: 1;
+            }
+            50%{
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            100%{
+                transform: scale(0.9);
+                opacity: 1;
+            }
+        }
+        .little-triangle{
+            width: 0.5em;
+            height: 70%;
+            padding: 0 0.2em;
+            animation: triangle-animation;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            &:nth-child(2){
+                animation-delay: 0.25s;
+            }
+            &:nth-child(3){
+                animation-delay: 0.5s;
+            }
+        }
+    }
 }

@@ -9,18 +9,24 @@ const content={
     // quetsions: require("../assets/questions.json"),
     questions: [
       {
-        title: "Question 1",
+        id: "0",
+        title: 'WHAT YEAR WAS LARKIN <span class="special-word">DRAFTED?</span>',
         selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
         userChoice: -1,
         correctAnswer: 1,
+        hero: require("../../public/Images/q1_image1.png"),
+        // choices:[
+        //   "2012","2013","2014","2015",
+        // ],
         images: [
-          require("../assets/question_selection_1.jpg"),
-          require("../assets/question_selection_2.jpg"),
-          require("../assets/question_selection_3.jpg"),
-          require("../assets/question_selection_4.jpg"),
+          require("../assets/q1_a1.gif"),
+          require("../assets/q1_a2.gif"),
+          require("../assets/q1_a3.gif"),
+          require("../assets/q1_a4.gif"),
         ],
       },
       {
+        id: "1",
         title: "Question 2",
         selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
         userChoice: -1,
@@ -33,6 +39,7 @@ const content={
         ],
       },
       {
+        id: "2",
         title: "Question 3",
         selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
         userChoice: -1,
@@ -45,6 +52,7 @@ const content={
         ],
       },
       {
+        id: "3",
         title: "Question 4",
         selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
         userChoice: -1,
@@ -57,6 +65,7 @@ const content={
         ],
       },
       {
+        id: "4",
         title: "Question 5",
         selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
         userChoice: -1,
@@ -69,6 +78,7 @@ const content={
         ],
       },
       {
+        id: "5",
         title: "Question 6",
         selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
         userChoice: -1,
@@ -81,6 +91,7 @@ const content={
         ],
       },
       {
+        id: "6",
         title: "Question 7",
         selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
         userChoice: -1,
@@ -93,6 +104,7 @@ const content={
         ],
       },
       {
+        id: "7",
         title: "Question 8",
         selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
         userChoice: -1,
@@ -105,6 +117,7 @@ const content={
         ],
       },
       {
+        id: "8",
         title: "Question 9",
         selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
         userChoice: -1,
@@ -117,6 +130,7 @@ const content={
         ],
       },
       {
+        id: "9",
         title: "Question 10",
         selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
         userChoice: -1,
