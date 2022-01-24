@@ -1,5 +1,5 @@
 <template>
     <div class='appFooter'>
-        <p> copyright information </p>
+        <p> &copy; COPY RIGHT 2022, THE DETROIT RED WINGS</p>
     </div>
 </template>

@@ -28,7 +28,7 @@
         </template>
       </div>
 
-      <div v-if="!concluded" class="buttons-container">
+      <div v-if="!concluded" class="buttons-container" :class="`question-shift-${progress}`">
         <div v-if="progress >= 0" v-show="!trivia" @click="minusFromProgress">
           <button :disabled="progress < 1">Back</button>
         </div>

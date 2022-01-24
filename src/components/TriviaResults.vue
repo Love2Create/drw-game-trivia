@@ -1,14 +1,14 @@
 <template>
-  <div>
+  <div class="trivia-results-wrapper">
 
-    <p>{{ `You got  ${correct.length} out of ${questions.length} questions right` }}</p>
+    <!-- <h3>{{ `You got  ${correct.length} out of ${questions.length} questions right` }}</h3> -->
     <ul>
         <p> You got these questions right:</p>
-        <li v-for="item in correct" :key="item">{{item.title}}</li>
+        <li v-for="item in correct" :key="item">{{item.questionTitle}}</li>
     </ul>
     <ul>
-        <p>You for these questions wrong;</p>
-        <li v-for="item in incorrect" :key="item">{{item.title}}</li>
+        <p>You got these questions wrong:</p>
+        <li v-for="item in incorrect" :key="item">{{item.questionTitle}}</li>
     </ul>
   </div>
 </template>

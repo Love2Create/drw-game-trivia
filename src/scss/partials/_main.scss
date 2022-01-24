@@ -1,3 +1,8 @@
+// *{
+//     margin: 0;
+//     padding: 0;
+//     box-sizing: border-box;
+// }
 main{
     display: flex;
     flex-direction: column;
@@ -14,24 +19,37 @@ main{
     display: flex;
     flex-direction: row;
     margin-top: 1em;
+    @include tablet{
+        margin-left: 9em;
+        &.question-shift-2, &.question-shift-4{
+            margin-left: 0;
+        }
+    }
     @include desktop{
-        margin-top: 3em;
+        margin-left: 9em;
+        &.question-shift-2, &.question-shift-4{
+            margin-left: 0;
+        }
     }
 }
 
 button{
+    font-family: $button-text;
     background-color: white;
     border-radius: 0.25em;
     display: flex;
     margin: 0.5em;
-    font-family: $subhead;
     font-size: 1.2em;
     text-transform: uppercase;
     color: $primaryColor;
     border: none;
     padding:0 0.5em;
     @include tablet{
-        font-size: 1.5em;
+        font-size: 1.25em;
+        padding:0 0.5em;
+    }
+    @include desktop{
+        font-size: 1.25em;
         padding:0 0.5em;
     }
 }

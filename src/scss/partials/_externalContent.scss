@@ -1,0 +1,9 @@
+iframe{
+    width: 350px;
+    height: 200px;
+    margin-top: 1rem;
+    @include tablet{
+        width: 600px;
+        height: 400px;
+    }
+}

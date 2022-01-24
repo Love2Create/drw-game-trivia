@@ -1,8 +1,9 @@
 <template>
-  <div>
-    <h2>THANK YOU FOR TAKING THIS TRIVIA!</h2>
-    <slot></slot>
+  <div class="result-wrapper">
+    <h2>THANK YOU FOR <span>TAKING THIS TRIVIA!</span></h2>
+    <slot></slot>  
     <TriviaResults v-if="trivia" :questions="questions"/>
+
   </div>
 </template>
 

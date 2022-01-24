@@ -1,0 +1,27 @@
+.result-wrapper{
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2{
+        text-align: center;
+        font-size: 1.8em;
+        line-height: 1.8em;
+        margin: 0;
+        span{
+            display: block;
+        }
+    }
+    slot{
+        width: 90vw;
+        height: auto;
+    }
+    @include tablet{
+        span{
+            display: inline !important;
+        }
+        h2{
+            font-size: 2.25em;
+        }
+    }
+}

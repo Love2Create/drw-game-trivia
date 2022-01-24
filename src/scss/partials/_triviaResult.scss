@@ -1,0 +1,25 @@
+.trivia-results-wrapper{
+    ul{
+        margin-top: 1rem;
+        p{
+            font-family: $subhead;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            margin: 0 0 0.5rem 0;
+            @include tablet{
+                font-size: 1.5em;
+            }
+        }
+        li{
+            font-family: $body-copy;
+            font-size: 1rem;
+            font-weight: lighter;
+            margin-top: 0;
+            @include tablet{
+                font-size: 1.2em;
+                line-height: 1.2em;;
+            }
+        }
+    }
+
+}

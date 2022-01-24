@@ -4,9 +4,14 @@
     width: 100vw;
     align-items: center;
     justify-content: center;
-    letter-spacing: 0.1em;
     &.question{
         &-0{
+            @include tablet{
+                margin-left: 9em;
+            }
+            @include desktop{
+                margin-left: 9em;
+            }
             &::after{
                 content: "";
                 width: 13em;
@@ -21,44 +26,49 @@
                 pointer-events: none;
                 @include tablet{
                     width: 15em;
-                    height: 20em;
+                    height: 19em;
                     margin-right: 11em;
-                    top: 6em;
-                    margin-right: 7.8em;
-                    border: 1px solide white;
+                    top: 4em;
+                    margin-right: 4em;
+                    border-bottom: 1px solid white;
                 }
                 @include desktop{
-                    width: 21em;
-                    height: 28em;
-                    margin-right: 11em;
-                    top: 7em;
-                    margin-right: 9.25em;
+                    width: 20em;
+                    height: 25em;
+                    margin-right: 8em;
+                    top: 5.5em;
                 }
             }
             
-            &::before{
-                @include tablet{
-                    content: "";
-                    z-index: -100;
-                    width: 25em;
-                    height: 30em;
-                    background-image: url('../public/Images/q1_image2.png');
-                    background-size: cover;
-                    position: absolute;
-                    top: 0em;
-                    left: 50%;
-                    margin-left: 5em;
-                }
-                @include desktop{
-                    width: 37em;
-                    height: 42em;
-                    top: -3em;
-                    margin-left: 8em;
-                }
-            }
+            // &::before{
+            //     @include tablet{
+            //         content: "";
+            //         z-index: -100;
+            //         width: 25em;
+            //         height: 30em;
+            //         background-image: url('../public/Images/q1_image2.png');
+            //         background-size: cover;
+            //         position: absolute;
+            //         top: 1em;
+            //         left: 50%;
+            //         margin-left: 5em;
+            //     }
+            //     @include desktop{
+            //         width: 37em;
+            //         height: 42em;
+            //         top: 1em;
+            //         margin-left: 8em;
+            //     }
+            // }
             
         }
         &-1{
+            @include tablet{
+                margin-left: 9em;
+            }
+            @include desktop{
+                margin-left: 9em;
+            }
             span{
                 @include tablet{
                     display: block;
@@ -80,15 +90,15 @@
                 margin-right: -13em;
                 pointer-events: none;
                 @include tablet{
-                    width: 17em;
-                    height: 23em;
-                    margin-right: 5em;
-                    top: 4em;
+                    width: 15em;
+                    height: 21em;
+                    margin-right: 2.5em;
+                    top: 5em;
                 }
                 @include desktop{
-                    width: 24em;
-                    height: 30em;
-                    margin-right: 3em;
+                    width: 25em;
+                    height: 31em;
+                    margin-right: 2em;
                     top: 5em;
                 }
             }
@@ -96,22 +106,132 @@
                 @include tablet{
                     content: "";
                     z-index: -100;
-                    width: 20em;
-                    height: 35em;
-                    background-image: url('../public/Images/q2_image2.gif');
+                    width: 3.25em;
+                    height: 1.25em;
+                    background-image: url('../public/Images/arrow_03.png');
                     background-size: cover;
                     position: absolute;
-                    top: -4em;
+                    top: 8em;
                     left: 50%;
-                    margin-left: 8em;
+                    margin-left: -8em;
+                    pointer-events: none;
                 }
                 @include desktop{
-                    width: 25em;
-                    height: 45em;
-                    top: -3em;
-                    margin-left: 11em;
+                    width: 6em;
+                    height: 2em;
+                    top: 10em;
+                    margin-left: -13em;
                 }
             }
+        }
+        &-2{
+            &::after{
+                content: "";
+                width: 18em;
+                height: 17.5em;
+                background-image: url('../public/Images/q3_image1.png');
+                background-size: cover;
+                z-index: 30;
+                position: absolute;
+                top: -3em;
+                right: 60%;
+                margin-right: -13em;
+                pointer-events: none;
+                @include tablet{
+                    width: 13em;
+                    height: 26em;
+                    margin-right: 3.5em;
+                    top: 1.25em;
+                }
+                @include desktop{
+                    width: 22em;
+                    height: 36em;
+                    margin-right: 3em;
+                    top: 1.5em;
+                }
+            }
+            &::before{
+                @include tablet{
+                    content: "";
+                    z-index: 100;
+                    width: 12em;
+                    height: 18em;
+                    background-image: url('../public/Images/q3_image2.png');
+                    background-size: cover;
+                    position: absolute;
+                    top: 7.25em;
+                    left: 50%;
+                    margin-left: 5em;
+                    pointer-events: none;
+                }
+                @include desktop{
+                    width: 17em;
+                    height: 27em;
+                    top: 10.5em;
+                    margin-left: 9em;
+                }
+            }
+        }
+        &-3{
+            @include tablet{
+                margin-left: 9em;
+            }
+            @include desktop{
+                margin-left: 9em;
+            }
+            &::after{
+                content: "";
+                width: 18em;
+                height: 17.5em;
+                background-image: url('../public/Images/q4_image1.png');
+                background-size: cover;
+                z-index: 30;
+                position: absolute;
+                top: -3em;
+                right: 64%;
+                margin-right: -13em;
+                pointer-events: none;
+                @include tablet{
+                    width: 14em;
+                    height: 27em;
+                    margin-right: -1em;
+                    top: 2em;
+                }
+                @include desktop{
+                    width: 19em;
+                    height: 38em;
+                    margin-right: 3em;
+                    top: 1em;
+                }
+            }
+        }
+        &-4{
+            &::after{
+                content: "";
+                width: 10em;
+                height: 10em;
+                background-image: url('../public/Images/q5_image1.png');
+                background-size: cover;
+                z-index: 30;
+                position: absolute;
+                top: 3em;
+                right: 50%;
+                margin-right: -4.8em;
+                pointer-events: none;
+                @include tablet{
+                    width: 6em;
+                    height: 6em;
+                    margin-right: -17em;
+                    top: 7.5em;
+                }
+                @include desktop{
+                    width: 8em;
+                    height: 8em;
+                    margin-right: -23em;
+                    top: 11em;
+                }
+            }
+
         }
     }
     .question-header{
@@ -132,13 +252,13 @@
         @include tablet{
             margin-top: 0.75em;
             width: 70vw;
-            // margin-left: 2em;
         }
         @include desktop{
             margin-top: 0em;
         }
     }
     .question-header-text{
+        font-family: $title;
         font-size: 2em;
         text-align: center;
         line-height: 1.125em;
@@ -146,24 +266,29 @@
         padding-top: 0.5em;
         text-transform: uppercase;
         @include tablet{
-            border-top: 0px solid white;
             font-size: 1.75em;
+            border-top: 0px solid white;
         }
         @include desktop{
-            font-size: 2.5em;
+            font-size: 2.75em;
+            span{
+                display: block;
+            }
         }
     }
 }
 .selection-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5em;
+    row-gap: 1em;
+    column-gap: 2em;
     @include tablet{
         grid-template-columns: 1fr 1fr;
         gap: 1.25em;
     }
     @include desktop{
-        gap: 2em;
+        row-gap: 2em;
+        column-gap: 3em;
     }
 }
 .selection{
@@ -181,7 +306,7 @@
 }
 [type=radio] + img {
     cursor: pointer;
-    width: 9em;
+    width: 8em;
     height: auto;
     box-sizing: border-box;
     border-radius: 0.2em;
@@ -189,10 +314,10 @@
     transition: transform, border-radius;
     transition-duration: 0.5s, 0.5s;
     @include tablet{
-        width: 8.5em;
+        width: 9em;
     }
     @include desktop{
-        width: 9.5em;
+        width: 12em;
     }
     
 }

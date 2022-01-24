@@ -1,5 +1,5 @@
 <template>
-    <div class='introScreen'>
+    <div class='intro-wrapper'>
         <div class="intro-title">
             <p class="intro-subhead"> How well do you know </p>
             <h1 class="intro-header">DYLAN LARKIN</h1>
