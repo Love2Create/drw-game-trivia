@@ -10,8 +10,8 @@ const content={
     questions: [
       {
         id: "0",
-        title: 'WHAT YEAR WAS LARKIN <span class="special-word">DRAFTED?</span>',
-        questionTitle: "WHAT YEAR WAS LARKIN DRAFTED?",
+        title: 'What year was Larkin <span class="special-word">drafted?</span>',
+        questionTitle: "What year was Larkin drafted?",
         selections: ["choice 1", "choice 2", "choice 3", "choice 4"],
         userChoice: -1,
         correctAnswer: 1,

@@ -12,7 +12,15 @@
 @import './partials/externalContent';
 @import './partials/consclusion';
 @import './partials/triviaResult';
+@import './partials/accordion';
+@import './partials/accordionMenu';
+@import './partials/accodionResult';
 
 html{
     font-size: 16px;
+    box-sizing: border-box;
+}
+*{
+    margin: 0;
+    padding: 0;
 }

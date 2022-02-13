@@ -43,7 +43,7 @@
         <Progress :progress="progress" :questions="questions" />
       </div>
 
-      <div v-if="concluded" >
+      <div v-if="concluded" class="conclusion-component-container">
         <Conclusion :questions="questions" :trivia="trivia" :poll="poll" :personality-test="personalityTest">
           <ExternalContent url="https://www.youtube.com/embed/Kpb_op5WtLU" width="800" height="400" />
         </Conclusion>

@@ -125,6 +125,16 @@
             }
         }
         &-2{
+            @include tablet{
+                span{
+                    display:block;
+                }
+            }
+            @include desktop{
+                span{
+                    display:block;
+                }
+            }
             &::after{
                 content: "";
                 width: 18em;
@@ -175,9 +185,15 @@
         &-3{
             @include tablet{
                 margin-left: 9em;
+                span{
+                    display:block;
+                }
             }
             @include desktop{
                 margin-left: 9em;
+                span{
+                    display:block;
+                }
             }
             &::after{
                 content: "";
@@ -188,24 +204,34 @@
                 z-index: 30;
                 position: absolute;
                 top: -3em;
-                right: 64%;
-                margin-right: -13em;
+                right: 50%;
+                margin-right: -10em;
                 pointer-events: none;
                 @include tablet{
                     width: 14em;
                     height: 27em;
-                    margin-right: -1em;
+                    margin-right: 5em;
                     top: 2em;
                 }
                 @include desktop{
                     width: 19em;
                     height: 38em;
-                    margin-right: 3em;
+                    margin-right: 11em;
                     top: 1em;
                 }
             }
         }
         &-4{
+            @include tablet{
+                span{
+                    display:block;
+                }
+            }
+            @include desktop{
+                span{
+                    display:block;
+                }
+            }
             &::after{
                 content: "";
                 width: 10em;

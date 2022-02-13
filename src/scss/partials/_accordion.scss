@@ -1,0 +1,12 @@
+.accordion-items{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    .accordion-item-header{
+        color: white;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-between;
+
+    }
+}
