@@ -1,20 +1,15 @@
 <template>
   <div class="result-slot-container">
-
-    <!-- <h3>{{ `You got  ${correct.length} out of ${questions.length} questions right` }}</h3> -->
-    <ul>
-        <p> You got these questions right:</p>
-        <div class="list-container">
-          <li v-for="item in correct" :key="item">{{item.questionTitle}}</li>
-        </div>
-    </ul>
-    <ul>
-        <p>You got these questions wrong:</p>
-        <div class="list-container">
-          <li v-for="item in incorrect" :key="item">{{item.questionTitle}}</li>
-        </div>
-    </ul>
-
+    <div class="result-list-container">
+      <p> You got these questions right:</p>
+      <ul class="list-container">
+        <li v-for="item in correct" :key="item">{{item.questionTitle}}</li>
+      </ul>
+      <p> You got these questions right:</p>
+      <ul class="list-container">
+        <li v-for="item in incorrect" :key="item">{{item.questionTitle}}</li>
+      </ul>
+    </div>
   </div>
 </template>
 

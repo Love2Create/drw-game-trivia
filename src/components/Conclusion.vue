@@ -22,7 +22,8 @@
         :slot="index">
         <AccordionResult v-if="index===0" :questions="questions"/>
         <AccordionTAF v-if="index===1"/>
-        <AccordionDeals v-if="index===2"/>
+        <AccordionLearnMore v-if="index===2" />
+        <AccordionDeals v-if="index===3"/>
       </div>
     </AccordionMenu>
     <slot></slot>
@@ -34,19 +35,20 @@ import AccordionTAF from './AccordionTAF.vue';
 import AccordionResult from './AccordionResult.vue';
 import AccordionDeals from './AccordionDeals.vue';
 import AccordionMenu from './AccordionMenu.vue';
+import AccordionLearnMore from './AccordionLearnMore.vue';
 import FBicon from '../components/images/FBicon.vue';
 import IGicon from '../components/images/IGicon.vue';
 import TWicon from '../components/images/TWicon.vue';
 
 export default {
   components: {
-    AccordionTAF,AccordionDeals,AccordionResult,AccordionMenu, FBicon,IGicon,TWicon,
+    AccordionTAF,AccordionDeals,AccordionResult,AccordionLearnMore, AccordionMenu, FBicon,IGicon,TWicon,
   },
 
   data(){
     return{
       showContent: false,
-      accordionHeaders: ['YOUR TRIVIA RESULT', 'TELL A FRIEND', 'LEARN MORE ABOUT LARKIN', "SPECIAL DEALS FOR LARKIN'S FANS"],
+      accordionHeaders: ['YOUR TRIVIA RESULT', 'TELL A FRIEND', 'LEARN MORE ABOUT LARKIN', "FOR LARKIN'S FANS ONLY"],
     }
   },
 
@@ -59,7 +61,7 @@ export default {
 
   computed:{
     accordionSections(){
-      return [AccordionResult,AccordionTAF,AccordionDeals];
+      return [AccordionResult,AccordionTAF,AccordionLearnMore,AccordionDeals];
     }
   }
 };

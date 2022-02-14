@@ -3,12 +3,9 @@
     height: 1.5em;
     padding: 0.5em;
     justify-content: end;
-    h1{
-        font-size: $small;
+    #lgrw-icon{
+        color: $textColor;
+        width: 3rem;
+        height: auto;
     }
-}
-
-.appHeader img{
-    width: 4em;
-    height: 1.25em;
 }
