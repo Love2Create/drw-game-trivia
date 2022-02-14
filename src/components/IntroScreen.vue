@@ -3,8 +3,8 @@
         <div class="intro-title">
             <p class="intro-subhead"> How well do you know </p>
             <h1 class="intro-header">DYLAN LARKIN</h1>
-            <img src="../../public/Images/arrow_01.png" class="intro-arrow" />
-            <img src="../../public/Images/intro_avatar.gif" class="intro-avatar"/>    
+            <img src="https://love2create.github.io/drw-game-trivia/public/Images/arrow_01.png" class="intro-arrow" />
+            <img src="https://love2create.github.io/drw-game-trivia/public/Images/intro_avatar.gif" class="intro-avatar"/>    
         </div>
         <div class="button-container">
             <button @click="buttonEvent" class="intro-button">Let's Find Out</button>
